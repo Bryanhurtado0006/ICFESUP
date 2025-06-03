@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:translationY="-30dp"
-                android:text="Bienvenido a ICFES-UP"
+                android:text="Bienvenido a ICFES UP"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:background="@color/colorx"
+                    android:background="#99D59B"
                     android:gravity="center"
                     android:padding="16dp">
 
@@ -184,14 +184,15 @@
                     <TextView
                         android:layout_width="142dp"
                         android:id="@+id/Orientacion_v"
-                        android:clickable="false"
+
                         android:focusable="true"
                         android:foreground="?selectableItemBackground"
                         android:layout_height="wrap_content"
-                        android:text="orientacion vocacional"
+                        android:text="Orientacion Vocacional"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="15dp"
+                        android:clickable="true"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -213,7 +214,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center"
-                    android:background="#858585"
+                    android:background="#2196F3"
                     android:padding="16dp">
 
                     <ImageView
@@ -226,7 +227,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Mis insignias"
+                        android:text="Modo Supervivencia"
                         android:textStyle="bold"
                         android:textColor="@color/black"
                         android:textAlignment="center"/>

@@ -1,67 +1,149 @@
-<!-- res/layout/fragment_test.xml -->
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_test"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background_test"
+    android:padding="@dimen/default_padding"
+    tools:context=".ui.test.TestFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!-- Título sección -->
+    <TextView
+        android:id="@+id/tvSeccion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Sección: Intereses"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/category_text_size"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/large_margin" />
 
-        <TextView
-            android:id="@+id/tvSeccion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sección: Intereses"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="12dp" />
+    <!-- Pregunta -->
+    <TextView
+        android:id="@+id/tvPregunta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¿Qué actividad disfrutas más?"
+        android:textColor="@color/primary_text"
+        android:textSize="@dimen/question_text_size"
+        app:layout_constraintTop_toBottomOf="@id/tvSeccion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/medium_margin" />
 
-        <TextView
-            android:id="@+id/tvPregunta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Qué actividad disfrutas más?"
-            android:textSize="16sp"
-            android:layout_marginBottom="12dp" />
+    <!-- Scroll con opciones -->
+    <ScrollView
+        android:id="@+id/scrollViewOpciones"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/tvPregunta"
+        app:layout_constraintBottom_toTopOf="@id/btnSiguiente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/medium_margin"
+        android:layout_marginBottom="@dimen/medium_margin">
 
         <RadioGroup
             android:id="@+id/opcionesGroup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/option1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/option2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/option3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/option4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <RadioButton
-                android:id="@+id/option5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/btnSiguiente"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Siguiente"
-            android:layout_marginTop="20dp" />
-    </LinearLayout>
-</ScrollView>
+            android:orientation="vertical">
+
+            <!-- Opción 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_margin"
+                app:cardElevation="@dimen/card_elevation"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="@dimen/card_stroke_width">
+
+                <RadioButton
+                    android:id="@+id/option1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Leer sobre temas nuevos"
+                    style="@style/TestOptionRadioButton" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Opción 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_margin"
+                app:cardElevation="@dimen/card_elevation">
+
+                <RadioButton
+                    android:id="@+id/option2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Resolver acertijos o problemas matemáticos"
+                    style="@style/TestOptionRadioButton" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Opción 3 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_margin"
+                app:cardElevation="@dimen/card_elevation">
+
+                <RadioButton
+                    android:id="@+id/option3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ayudar a otras personas"
+                    style="@style/TestOptionRadioButton" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Opción 4 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/small_margin"
+                app:cardElevation="@dimen/card_elevation">
+
+                <RadioButton
+                    android:id="@+id/option4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crear cosas (dibujar, escribir, diseñar)"
+                    style="@style/TestOptionRadioButton" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Opción 5 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/card_elevation">
+
+                <RadioButton
+                    android:id="@+id/option5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Armar o reparar objetos"
+                    style="@style/TestOptionRadioButton" />
+            </com.google.android.material.card.MaterialCardView>
+        </RadioGroup>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        style="@style/PrimaryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Siguiente"
+        android:layout_marginBottom="@dimen/large_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

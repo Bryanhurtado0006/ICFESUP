@@ -1,16 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/nav_home">
 
+    <!-- Menu principal -->
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.icfes_up.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_bienvenidaFragment"
+            app:destination="@id/bienvenidaFragment" />
+    </fragment>
 
+    <!-- Otros menús -->
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.icfes_up.ui.gallery.GalleryFragment"
@@ -28,4 +34,32 @@
         android:name="com.example.icfes_up.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+
+    <!-- Test vocacional -->
+    <fragment
+        android:id="@+id/bienvenidaFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.BienvenidaFragment"
+        android:label="BienvenidaFragment">
+        <action
+            android:id="@+id/action_bienvenidaFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.TestFragment"
+        android:label="TestFragment">
+        <action
+            android:id="@+id/action_testFragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.FinalFragment"
+        android:label="FinalFragment">
+        <action
+            android:id="@+id/action_finalFragment_to_bienvenidaFragment"
+            app:destination="@id/bienvenidaFragment" />
+    </fragment>
 </navigation>
