@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/edInicioSesion"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="center"
+        android:text="¡Es tu momento! Cada esfuerzo te acerca a tus sueños."
+        android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/imagenIcfes"
+        android:layout_width="wrap_content"
+        android:layout_height="220dp"
+        android:layout_marginTop="60dp"
+        android:contentDescription="Imagen de ejemplo" />
+
+    <Button
+        android:id="@+id/btnInicoSecion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INICIAR SESIÓN"
+        android:layout_marginTop="30dp" />
+
+    <TextView
+        android:id="@+id/tvSobreNosotros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre nosotros"
+        android:textColor="#0000FF"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>
