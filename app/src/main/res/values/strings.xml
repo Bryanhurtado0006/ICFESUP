@@ -11,5 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
+    //mundos
+    <string name="mundoss">🧠 Explora mundos llenos de magia y aprendizaje:\n\n🔢 Campo de Batalla Matematico\n📚 Biblioteca Encantada\n🧪 Laboratorio Galactico\n🇬🇧 English Arena\n🌌 Republica de las Decisiones\n\n¡Elige tu mundo favorito y comienza a aprender jugando!</string>
 
 </resources>

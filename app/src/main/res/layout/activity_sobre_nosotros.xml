@@ -5,6 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".logueo_registro.Sobre_Nosotros">
+    tools:context=".logueo.Sobre_Nosotros">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

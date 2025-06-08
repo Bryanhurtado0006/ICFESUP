@@ -1,15 +1,19 @@
 package com.example.icfes_up.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.navigation.Navigation;
+
+import com.example.icfes_up.Gamificacion_LUIS.Ruleta_LUIS;
 import com.example.icfes_up.R;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import com.example.icfes_up.Mundos.Mundos_activity;
 
 import com.example.icfes_up.databinding.FragmentHomeBinding;
 
@@ -31,8 +35,28 @@ public class HomeFragment extends Fragment {
         binding.OrientacionV.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_bienvenidaFragment);
         });
+
+        //mundos direccion
+        binding.ImgMundosgami.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), Mundos_activity.class);
+            startActivity(intent);
+            requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
+        });
+
+        //DINAMICAS Y RETOS
+
+        /*binding.ImgGamificacionsemanal.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), Ruleta_LUIS.class);
+            startActivity(intent);
+            requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
+        });*/
+
         return root;
+
+
     }
+
+
 
     @Override
     public void onDestroyView() {

@@ -1,4 +1,4 @@
-package com.example.icfes_up.logueo_registro;
+package com.example.icfes_up.logueo;
 
 import android.content.Intent;
 import android.os.Bundle;

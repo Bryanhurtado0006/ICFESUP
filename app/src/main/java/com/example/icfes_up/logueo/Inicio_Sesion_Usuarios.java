@@ -1,4 +1,4 @@
-package com.example.icfes_up.logueo_registro;
+package com.example.icfes_up.logueo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,8 +12,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.icfes_up.MainActivity;
 import com.example.icfes_up.R;
 import com.example.icfes_up.model.DbHelper; // Asegúrate de que la ruta del paquete sea correcta
+
 
 public class Inicio_Sesion_Usuarios extends AppCompatActivity {
 
@@ -58,9 +60,9 @@ public class Inicio_Sesion_Usuarios extends AppCompatActivity {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
                 // Cuando crees la actividad, descomenta estas líneas:
-                // Intent intent = new Intent(this, Inicio_Simulacros.class);
-                // startActivity(intent);
-                // finish();
+                Intent intent = new Intent(this, MainActivity.class);
+                 startActivity(intent);
+                finish();
 
             } else {
                 Toast.makeText(this, "Correo o contraseña incorrectos", Toast.LENGTH_SHORT).show();

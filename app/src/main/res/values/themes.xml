@@ -1,25 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.ICFESUP" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
+
+    <!-- Tema base de la aplicación -->
+    <style name="Theme.ICFESUP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colores primarios -->
         <item name="colorPrimary">@color/purple_500</item>
-
+        <item name="colorPrimaryVariant">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
-        <!-- Secondary brand color. -->
+
+        <!-- Colores secundarios -->
         <item name="colorSecondary">@color/teal_200</item>
-
+        <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+
+
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+
     </style>
 
-    <style name="Theme.ICFESUP.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
+    <!-- Estilos para overlays opcionales -->
     <style name="Theme.ICFESUP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.ICFESUP.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
