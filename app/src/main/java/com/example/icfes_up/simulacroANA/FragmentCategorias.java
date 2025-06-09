@@ -8,9 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import com.example.icfes_up.databinding.FragmentCategoriasBinding;
 
 import com.example.icfes_up.R;
-import com.example.icfes_up.databinding.FragmentCategoriasBinding;
 
 public class FragmentCategorias extends Fragment {
     private FragmentCategoriasBinding binding;
