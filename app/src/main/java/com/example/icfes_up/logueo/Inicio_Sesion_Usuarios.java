@@ -62,7 +62,7 @@ public class Inicio_Sesion_Usuarios extends AppCompatActivity {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
                 // Cuando crees la actividad, descomenta estas líneas:
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, CategoriasActivity.class);
                  startActivity(intent);
                 finish();
 
