@@ -15,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.icfes_up.MainActivity;
 import com.example.icfes_up.R;
 import com.example.icfes_up.model.DbHelper; // Asegúrate de que la ruta del paquete sea correcta
+import com.example.icfes_up.simulacroANA.CategoriasActivity;
 import com.example.icfes_up.simulacroANA.FragmentCategorias;
 
 
@@ -60,7 +61,8 @@ public class Inicio_Sesion_Usuarios extends AppCompatActivity {
             if (existe) {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(this, FragmentCategorias.class);
+                // Cuando crees la actividad, descomenta estas líneas:
+                Intent intent = new Intent(this, CategoriasActivity.class);
                  startActivity(intent);
                 finish();
 
