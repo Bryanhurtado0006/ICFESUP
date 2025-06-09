@@ -74,37 +74,77 @@ public class Ruleta_View_Luis extends View {
 
         // Dibuja "GO" en el centro
         paint.setColor(Color.WHITE);
-        canvas.drawCircle(width / 2, height / 2, 50, paint);
-        textPaint.setTextSize(40);
-        canvas.drawText("GO", width / 2, height / 2 + 15, textPaint);
+        canvas.drawCircle(width / 2, height / 2, 60, paint);
+        paint.setColor(Color.DKGRAY);
+        paint.setTextSize(26f);
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTypeface(Typeface.DEFAULT_BOLD);
+        canvas.drawText("GO", width / 2, height / 2 + 10, paint);
+
+        // Dibuja la flecha centrada ABAJO (270°)
+        drawArrow(canvas, width / 2, height / 2 + radius + 30);
     }
 
-    private void drawTextOnSector(Canvas canvas, String text, float angle, float radius) {
-        double radian = Math.toRadians(angle);
-        float x = (float) (getWidth() / 2 + radius / 1.5 * Math.cos(radian));
-        float y = (float) (getHeight() / 2 + radius / 1.5 * Math.sin(radian));
-
-        textPaint.setTextSize(28);
+    private void drawTextOnSector(Canvas canvas, String text, float angleDeg, float radius) {
+        double angleRad = Math.toRadians(angleDeg);
+        float x = (float) (getWidth() / 2 + radius / 1.5 * Math.cos(angleRad));
+        float y = (float) (getHeight() / 2 + radius / 1.5 * Math.sin(angleRad));
+        textPaint.setTextSize(radius / 10);
         canvas.drawText(text, x, y, textPaint);
     }
 
-    public void girarRuleta(final Runnable onStop) {
-        categoriaSeleccionadaIndex = new Random().nextInt(categorias.length);
-        categoriaSeleccionada = categorias[categoriaSeleccionadaIndex];
+    private void drawArrow(Canvas canvas, float x, float y) {
+        paint.setColor(Color.BLACK);
+        Path path = new Path();
+        path.moveTo(x, y);
+        path.lineTo(x - 25, y + 50);
+        path.lineTo(x + 25, y + 50);
+        path.close();
+        canvas.drawPath(path, paint);
+    }
 
-        // Animación para girar la ruleta
-        ObjectAnimator rotation = ObjectAnimator.ofFloat(this, "rotation", currentAngle, currentAngle + (360 * 5) + new Random().nextInt(360));
-        rotation.setDuration(5000);
-        rotation.setInterpolator(new DecelerateInterpolator());
-        rotation.addListener(new AnimatorListenerAdapter() {
+    public void girarRuleta(Runnable onFinish) {
+        Random random = new Random();
+        int vueltas = random.nextInt(3) + 5;
+        float sweepAngle = 360f / categorias.length;
+
+        // Selección aleatoria de categoría
+        int indexFinal = random.nextInt(categorias.length);
+
+        // Queremos que el centro del sector seleccionado quede en el ángulo 270°
+        float anguloCentroSector = indexFinal * sweepAngle + sweepAngle / 2;
+        float anguloObjetivo = 270 - anguloCentroSector;
+
+        float rotacionExtra = vueltas * 360 + anguloObjetivo;
+        float inicio = currentAngle;
+        float destino = currentAngle + rotacionExtra;
+
+        ValueAnimator animator = ValueAnimator.ofFloat(inicio, destino);
+        animator.setDuration(3000);
+        animator.setInterpolator(new DecelerateInterpolator());
+
+        animator.addUpdateListener(animation -> {
+            currentAngle = (float) animation.getAnimatedValue();
+            invalidate();
+        });
+
+        animator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
-                currentAngle = (currentAngle + 360 * 5 + new Random().nextInt(360)) % 360;
-                onStop.run();
+                currentAngle = destino % 360;
+
+                float fixedAngle = (270 - currentAngle + 360) % 360;
+                int index = (int) (fixedAngle / sweepAngle);
+
+                categoriaSeleccionadaIndex = index;
+                categoriaSeleccionada = categorias[index];
+                invalidate();
+
+                if (onFinish != null) onFinish.run();
             }
         });
-        rotation.start();
+
+        animator.start();
     }
 
     public String getCategoriaSeleccionada() {
