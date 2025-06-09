@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentCategorias">
+
+    <fragment
+        android:id="@+id/fragmentCategorias"
+        android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
+        android:label="Categorías"
+        tools:layout="@layout/fragment_categorias">
+        <action
+            android:id="@+id/action_fragmentCategorias_to_simulacroLectura1"
+            app:destination="@id/simulacroLectura1" />
+    </fragment>
+
+    <fragment android:id="@+id/simulacroLectura1"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
+        android:label="Simulacro Lectura 1"
+        tools:layout="@layout/fragment_simulacro_lectura_1">
+        <action android:id="@+id/action_simulacroLectura1_to_lectura_Simulacro_2"
+            app:destination="@id/lectura_Simulacro_2" />
+    </fragment>
+    <fragment android:id="@+id/lectura_Simulacro_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="Simulacro Lectura 2"
+        tools:layout="@layout/fragment_simulacro_lectura_2">
+    </fragment>
+</navigation>
