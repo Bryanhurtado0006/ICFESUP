@@ -76,12 +76,23 @@ public class OrientacionViewModel extends ViewModel {
     }
 
     public void guardarRespuesta(String respuesta) {
-        respuestas.add(respuesta);
+        if (seccionActual < respuestas.size()) {
+            respuestas.set(seccionActual, respuesta);
+        } else {
+            respuestas.add(respuesta);
+        }
         seccionActual++;
     }
+
     public String getRespuestaActual() {
-        return respuestas.get(indiceActual);
+
+        if (seccionActual < respuestas.size()) {
+            return respuestas.get(seccionActual);
+        } else {
+            return null;
+        }
     }
+
 
     public boolean testCompletado() {
         return seccionActual >= titulos.length;
