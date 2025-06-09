@@ -33,14 +33,15 @@
 
 
         <activity
+            android:name=".simulacroANA.CategoriasActivity"
+            android:exported="false" />
+        <activity
             android:name=".logueo.Sobre_Nosotros"
             android:exported="false" />
         <activity
             android:name=".logueo.Inicio_Sesion_Usuarios"
             android:exported="false" />
         <activity android:name=".Mundos.Mundos_activity" />
-
-
         <activity
             android:name=".logueo.Inicio_Sesion"
             android:exported="true"
@@ -52,15 +53,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.ICFESUP"
-            />
-
-
-
+            android:theme="@style/Theme.ICFESUP" />
     </application>
 
 </manifest>
