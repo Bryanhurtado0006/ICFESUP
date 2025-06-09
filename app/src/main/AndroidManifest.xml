@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ICFESUP"
         tools:targetApi="31">
         <activity
+            android:name=".logueo_registro.SplashActivityInicio"
+            android:exported="false" />
+        <activity
             android:name=".logueo_registro.Sobre_Nosotros"
             android:exported="false" />
         <activity
