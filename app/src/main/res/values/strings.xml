@@ -13,5 +13,7 @@
 
     //mundos
     <string name="mundoss">🧠 Explora mundos llenos de magia y aprendizaje:\n\n🔢 Campo de Batalla Matematico\n📚 Biblioteca Encantada\n🧪 Laboratorio Galactico\n🇬🇧 English Arena\n🌌 Republica de las Decisiones\n\n¡Elige tu mundo favorito y comienza a aprender jugando!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
