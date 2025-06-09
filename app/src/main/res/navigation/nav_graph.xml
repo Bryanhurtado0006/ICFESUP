@@ -18,5 +18,12 @@
         android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
         android:label="Simulacro Lectura 1"
         tools:layout="@layout/fragment_simulacro_lectura_1">
+        <action android:id="@+id/action_simulacroLectura1_to_lectura_Simulacro_2"
+            app:destination="@id/lectura_Simulacro_2" />
+    </fragment>
+    <fragment android:id="@+id/lectura_Simulacro_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="Simulacro Lectura 2"
+        tools:layout="@layout/fragment_simulacro_lectura_2">
     </fragment>
 </navigation>
