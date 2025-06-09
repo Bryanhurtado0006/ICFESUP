@@ -1,5 +1,6 @@
 package com.example.icfes_up.simulacroANA;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation;
 import com.example.icfes_up.databinding.FragmentCategoriasBinding;
 
 import com.example.icfes_up.R;
+import com.example.icfes_up.ui.home.HomeFragment;
 
 public class FragmentCategorias extends Fragment {
     private FragmentCategoriasBinding binding;
@@ -31,5 +33,14 @@ public class FragmentCategorias extends Fragment {
         binding.itemLectura.setOnClickListener(v ->
                 Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacroLectura1)
         );
+
+        binding.btnTitulo.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), HomeFragment.class);
+            startActivity(intent);
+        });
+
+
+
+
     }
 }
