@@ -45,11 +45,11 @@ public class HomeFragment extends Fragment {
 
         //DINAMICAS Y RETOS
 
-        /*binding.ImgGamificacionsemanal.setOnClickListener(v -> {
+        binding.ImgGamificacionsemanal.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Ruleta_LUIS.class);
             startActivity(intent);
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
-        });*/
+        });
 
         return root;
 

@@ -1,4 +1,4 @@
-package com.example.icfes_up.ui.gallery;
+package com.example.icfes_up.ui.configuracionn;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

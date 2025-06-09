@@ -79,6 +79,9 @@ public class OrientacionViewModel extends ViewModel {
         respuestas.add(respuesta);
         seccionActual++;
     }
+    public String getRespuestaActual() {
+        return respuestas.get(indiceActual);
+    }
 
     public boolean testCompletado() {
         return seccionActual >= titulos.length;

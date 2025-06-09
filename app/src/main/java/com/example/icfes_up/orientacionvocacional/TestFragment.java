@@ -66,6 +66,8 @@ public class TestFragment extends Fragment {
         binding.option3.setText(opciones[2]);
         binding.option4.setText(opciones[3]);
         binding.option5.setText(opciones[4]);
+
+        String respuestaPrev = viewModel.getRespuestaActual();
     }
 
     @Override

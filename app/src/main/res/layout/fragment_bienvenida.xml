@@ -1,84 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="@android:color/white">
+    android:background="@drawable/fondo_test_vocacional" >
 
+
+    <!-- Fondo semitransparente para resaltar el contenido -->
+<androidx.cardview.widget.CardView
+android:id="@+id/contentCard"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+app:cardCornerRadius="24dp"
+app:cardElevation="8dp"
+android:background="#CCFFFFFF"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+android:layout_margin="24dp"
+android:padding="24dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- Título -->
     <TextView
-        android:id="@+id/tvTitulo"
-        android:text="🚀 Descubre tu futuro"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#1A237E"
-        android:textAlignment="center"
+        android:id="@+id/titleText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="¡Bienvenido al Test Vocacional!"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Mensaje de bienvenida -->
     <TextView
-        android:id="@+id/tvSubtitulo"
-        android:text="Test de Orientación Vocacional"
+        android:id="@+id/welcomeMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="¿No sabes qué estudiar? ¡No te preocupes!"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:textColor="#3949AB"
-        android:textAlignment="center"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Descripción -->
     <TextView
-        android:id="@+id/tvExplicacion"
+        android:id="@+id/descriptionText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:lineSpacingExtra="6dp"
-        android:text="¿No sabes qué carrera elegir? Este test analiza tus intereses y habilidades para ayudarte a tomar una decisión inteligente y alineada contigo. ¡Da el primer paso hacia un futuro con propósito!"
-        android:textAlignment="center"
-        android:textColor="#424242"
+        android:text="Este test te ayudará a descubrir tus intereses y habilidades para elegir la carrera adecuada para ti."
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/welcomeMessage"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-        app:layout_constraintTop_toBottomOf="@id/tvSubtitulo" />
-
+    <!-- Botón para iniciar -->
     <Button
         android:id="@+id/btnComenzarTest"
-        android:text="✨ Comenzar Test"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:backgroundTint="#3F51B5"
+        android:text="¡Comenzar!"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/purple_500"
         android:textColor="@android:color/white"
-        android:paddingLeft="32dp"
-        android:paddingRight="32dp"
-        android:paddingTop="14dp"
-        android:paddingBottom="14dp"
-
-        android:drawablePadding="12dp"
-        app:layout_constraintTop_toBottomOf="@id/tvExplicacion"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginHorizontal="16dp"
+        app:cornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/descriptionText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:cornerRadius="24dp"
-
-
-        />
-
-
-
-
-
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 

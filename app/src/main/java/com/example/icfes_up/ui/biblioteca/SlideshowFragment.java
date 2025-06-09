@@ -1,4 +1,4 @@
-package com.example.icfes_up.ui.slideshow;
+package com.example.icfes_up.ui.biblioteca;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

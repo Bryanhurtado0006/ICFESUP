@@ -12,6 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICFESUP"
         tools:targetApi="31">
+
+
+        <activity android:name=".configuracion.Lenny_Cerrarsesion"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Editarperfil"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Perfil"
+            android:exported="false"/>
+
+        <activity android:name=".configuracion.Lenny_Reporte"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Sugerencias"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Verperfil"
+            android:exported="false"/>
+        
+        <activity android:name=".Gamificacion_LUIS.Ruleta_LUIS"/>
+
+
+
         <activity
             android:name=".logueo.Sobre_Nosotros"
             android:exported="false" />
