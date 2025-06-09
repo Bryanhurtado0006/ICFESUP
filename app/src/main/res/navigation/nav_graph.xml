@@ -26,4 +26,6 @@
         android:label="Simulacro Lectura 2"
         tools:layout="@layout/fragment_simulacro_lectura_2">
     </fragment>
+
+
 </navigation>
