@@ -61,7 +61,7 @@
                 android:src="@drawable/user" />
             <TextView
                 android:id="@+id/Perfill"
-                android:text="Editar perfil"
+                android:text="Gestion de Perfil"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
