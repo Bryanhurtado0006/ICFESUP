@@ -8,18 +8,17 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
-import com.example.icfes_up.databinding.FragmentSimulacroLectura3Binding;
-
+import com.example.icfes_up.databinding.FragmentSimulacroLectura4Binding;
 import com.example.icfes_up.R;
 
-public class Simulacro_Lectura_3 extends Fragment {
-    private FragmentSimulacroLectura3Binding binding;
+public class Simulacro_Lectura_4 extends Fragment {
+    private FragmentSimulacroLectura4Binding binding;
 
-    public Simulacro_Lectura_3() {}
+    public Simulacro_Lectura_4() {}
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentSimulacroLectura3Binding.inflate(inflater, container, false);
+        binding = FragmentSimulacroLectura4Binding.inflate(inflater, container, false);
         return binding.getRoot();
     }
 
@@ -27,8 +26,8 @@ public class Simulacro_Lectura_3 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        binding.btnSiguiente3.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_lectura_Simulacro_3_to_lectura_Simulacro_4);
+        binding.VerEstadistica1.setOnClickListener(v -> {
+            Navigation.findNavController(v).navigate(R.id.action_simulacroLectura4_to_estadisticaLectura);
         });
     }
 
