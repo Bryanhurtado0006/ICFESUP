@@ -1,0 +1,264 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="25dp"
+    android:fillViewport="true"
+    tools:context=".simulacroANA.Estadistica_Lectura">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="1dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SIMULACRO DE LECTURA CRÍTICA"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginTop="16dp" />
+
+        <View
+            android:layout_width="140dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="12dp"
+            android:background="#cccccc" />
+
+        <ImageView
+            android:layout_width="155dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/prueba_lectura" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PUNTAJE DE LA PRUEBA"
+            android:textSize="12sp"
+            android:textColor="#999999"
+            android:layout_marginBottom="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="CORRECTAS:"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:textColor="#000000" />
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="8dp"
+                android:progress="3"
+                android:max="20"
+                android:progressTint="#00c853"
+                style="?android:attr/progressBarStyleHorizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:paddingStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="INCORRECTAS:"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:textColor="#000000" />
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="8dp"
+                android:progress="17"
+                android:max="20"
+                android:progressTint="#e91e63"
+                style="?android:attr/progressBarStyleHorizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:paddingStart="8dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="NIVEL:"
+                android:textSize="12sp"
+                android:paddingStart="8dp"
+                android:textColor="#000000" />
+
+            <ProgressBar
+                android:layout_width="100dp"
+                android:layout_height="8dp"
+                android:progress="1"
+                android:max="5"
+                android:progressTint="#673ab7"
+                style="?android:attr/progressBarStyleHorizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:paddingStart="8dp" />
+        </LinearLayout>
+
+        <TextView
+            android:text="1   Identificar y entender los contenidos locales que conforman un texto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#000000" />
+        <TextView
+            android:text="1/6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:text="2   Comprender cómo se articulan las partes de un texto para darle un sentido global"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#000000" />
+        <TextView
+            android:text="2/7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:text="3   Reflexionar a partir de un texto y evaluar su contenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#000000" />
+        <TextView
+            android:text="0/7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="12sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="1 min.\nTIEMPO EXAMEN"
+                android:textSize="12sp"
+                android:textColor="#333333" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
+                android:gravity="center"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                android:text="2.5 seg.\nTIEMPO * PREGUNTA"
+                android:textSize="12sp"
+                android:textColor="#333333" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnIrASimulacros"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Simulacros"
+            android:textColor="#000000"
+            android:backgroundTint="#00BCD4"
+            android:paddingLeft="30dp"
+            android:paddingRight="32dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/btnGoToMain1"
+            android:layout_width="301dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00BCD4"
+            android:text="Ir a página principal"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>
+
+
+
