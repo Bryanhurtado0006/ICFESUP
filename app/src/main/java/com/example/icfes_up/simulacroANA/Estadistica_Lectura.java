@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 import com.example.icfes_up.databinding.FragmentEstadisticaLecturaBinding;
 
+
 import com.example.icfes_up.R;
 
 public class Estadistica_Lectura extends Fragment {
@@ -30,6 +31,10 @@ public class Estadistica_Lectura extends Fragment {
 
         binding.btnIrASimulacros.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_estadisticaLectura_to_fragmentCategorias);
+        });
+
+        binding.btnGoToMain1.setOnClickListener(v ->{
+          Navigation.findNavController(v).navigate(R.id.action_estadisticaLectura_to_nav_home);
         });
     }
 
