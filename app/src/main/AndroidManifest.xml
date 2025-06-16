@@ -12,38 +12,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ICFESUP"
         tools:targetApi="31">
+
+
+        <activity android:name=".configuracion.Lenny_Cerrarsesion"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Editarperfil"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Perfil"
+            android:exported="false"/>
+
+        <activity android:name=".configuracion.Lenny_Reporte"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Sugerencias"
+            android:exported="false"/>
+        <activity android:name=".configuracion.Lenny_Verperfil"
+            android:exported="false"/>
+        
+        <activity android:name=".Gamificacion_LUIS.Ruleta_LUIS"/>
+
+
+
         <activity
-            android:name=".logueo_registro.Restablecer_Contrasena_3"
+            android:name=".simulacroANA.CategoriasActivity"
             android:exported="false" />
         <activity
-            android:name=".logueo_registro.Restablecer_Contrasena_2"
+            android:name=".logueo.Sobre_Nosotros"
             android:exported="false" />
         <activity
-            android:name=".logueo_registro.Restablecer_Contrasena_1"
+            android:name=".logueo.Inicio_Sesion_Usuarios"
             android:exported="false" />
+        <activity android:name=".Mundos.Mundos_activity" />
         <activity
-            android:name=".logueo_registro.SplashActivityInicio"
-            android:exported="false" />
-        <activity
-            android:name=".logueo_registro.Sobre_Nosotros"
-            android:exported="false" />
-        <activity
-            android:name=".logueo_registro.Inicio_Sesion_Usuarios"
-            android:exported="false" />
-        <activity
-            android:name=".logueo_registro.Inicio_Sesion"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".logueo.Inicio_Sesion"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ICFESUP.NoActionBar">
+            android:theme="@style/Theme.ICFESUP">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ICFESUP" />
     </application>
 
 </manifest>

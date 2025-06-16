@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragmentCategorias">
+
+    <fragment
+        android:id="@+id/fragmentCategorias"
+        android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
+        android:label="Categorías"
+        tools:layout="@layout/fragment_categorias">
+        <action
+            android:id="@+id/action_fragmentCategorias_to_simulacroLectura1"
+            app:destination="@id/simulacroLectura1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/simulacroLectura1"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
+        android:label="Simulacro Lectura 1"
+        tools:layout="@layout/fragment_simulacro_lectura_1">
+        <action
+            android:id="@+id/action_simulacroLectura1_to_lectura_Simulacro_2"
+            app:destination="@id/lectura_Simulacro_2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="Simulacro Lectura 2"
+        tools:layout="@layout/fragment_simulacro_lectura_2">
+        <action
+            android:id="@+id/action_lectura_Simulacro_2_to_lectura_Simulacro_3"
+            app:destination="@id/lectura_Simulacro_3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_3"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_3"
+        android:label="Simulacro Lectura 3"
+        tools:layout="@layout/fragment_simulacro_lectura_3">
+        <action
+            android:id="@+id/action_lectura_Simulacro_3_to_lectura_Simulacro_4"
+            app:destination="@id/lectura_Simulacro_4" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_4"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_4"
+        android:label="Simulacro Lectura 4"
+        tools:layout="@layout/fragment_simulacro_lectura_4">
+        <action android:id="@+id/action_simulacroLectura4_to_estadisticaLectura"
+            app:destination="@id/estadisticaLectura" />
+    </fragment>
+
+    <fragment android:id="@+id/estadisticaLectura"
+        android:name="com.example.icfes_up.simulacroANA.Estadistica_Lectura"
+        android:label="Estadística Lectura"
+        tools:layout="@layout/fragment_estadistica_lectura">
+        <action android:id="@+id/action_estadisticaLectura_to_fragmentCategorias"
+            app:destination="@id/fragmentCategorias" />
+        <action
+            android:id="@+id/action_estadisticaLectura_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.icfes_up.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_bienvenidaFragment"
+            app:destination="@id/bienvenidaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bienvenidaFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.BienvenidaFragment"
+        android:label="BienvenidaFragment">
+        <action
+            android:id="@+id/action_bienvenidaFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.TestFragment"
+        android:label="TestFragment">
+        <action
+            android:id="@+id/action_testFragment_to_finalFragment"
+            app:destination="@id/finalFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/finalFragment"
+        android:name="com.example.icfes_up.orientacionvocacional.FinalFragment"
+        android:label="FinalFragment">
+        <action
+            android:id="@+id/action_finalFragment_to_bienvenidaFragment"
+            app:destination="@id/bienvenidaFragment" />
+    </fragment>
+
+
+
+
+
+
+</navigation>

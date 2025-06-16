@@ -18,22 +18,18 @@
 
     <!-- Otros menús -->
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.icfes_up.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.icfes_up.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:id="@+id/nav_library"
+        android:name="com.example.icfes_up.ui.biblioteca.SlideshowFragment"
+        android:label="@string/Menu_bibioteca"
         tools:layout="@layout/fragment_slideshow" />
 
     <fragment
-        android:id="@+id/configuracion"
-        android:name="com.example.icfes_up.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:id="@+id/nav_configuracion"
+        android:name="com.example.icfes_up.ui.configuracionn.GalleryFragment"
+        android:label="@string/menu_configuracion"
         tools:layout="@layout/fragment_slideshow" />
+
+
 
     <!-- Test vocacional -->
     <fragment
@@ -62,4 +58,70 @@
             android:id="@+id/action_finalFragment_to_bienvenidaFragment"
             app:destination="@id/bienvenidaFragment" />
     </fragment>
+    <activity
+        android:id="@+id/inicio_Sesion"
+        android:name="com.example.icfes_up.logueo.Inicio_Sesion"
+        android:label="Inicio_Sesion" />
+    <activity
+        android:id="@+id/inicio_Sesion_Usuarios"
+        android:name="com.example.icfes_up.logueo.Inicio_Sesion_Usuarios"
+        android:label="Inicio_Sesion_Usuarios" />
+    <fragment
+        android:id="@+id/fragmentCategorias2"
+        android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" >
+        <action
+            android:id="@+id/action_fragmentCategorias2_to_simulacro_Lectura_1"
+            app:destination="@id/simulacro_Lectura_1" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_1"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
+        android:label="fragment_simulacro_lectura_1"
+        tools:layout="@layout/fragment_simulacro_lectura_1" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_1_to_simulacro_Lectura_2"
+            app:destination="@id/simulacro_Lectura_2" />
+        <action
+            android:id="@+id/action_simulacro_Lectura_1_to_simulacro_Lectura_22"
+            app:destination="@id/simulacro_Lectura_2" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="fragment_simulacro_lectura_2"
+        tools:layout="@layout/fragment_simulacro_lectura_2" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_2_to_simulacro_Lectura_3"
+            app:destination="@id/simulacro_Lectura_3" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_3"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_3"
+        android:label="fragment_simulacro_lectura_3"
+        tools:layout="@layout/fragment_simulacro_lectura_3" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_3_to_simulacro_Lectura_4"
+            app:destination="@id/simulacro_Lectura_4" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_4"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_4"
+        android:label="fragment_simulacro_lectura_4"
+        tools:layout="@layout/fragment_simulacro_lectura_4" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_4_to_estadistica_Lectura"
+            app:destination="@id/estadistica_Lectura" />
+    </fragment>
+    <fragment
+        android:id="@+id/estadistica_Lectura"
+        android:name="com.example.icfes_up.simulacroANA.Estadistica_Lectura"
+        android:label="fragment_estadistica_lectura"
+        tools:layout="@layout/fragment_estadistica_lectura" >
+        <action
+            android:id="@+id/action_estadistica_Lectura_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
+
