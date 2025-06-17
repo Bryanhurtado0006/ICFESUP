@@ -7,6 +7,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.icfes_up.databinding.ActivityRestablecerContrasena1Binding;
+import com.example.icfes_up.logueo.Restablecer_Contrasena_2;
 
 public class Restablecer_Contrasena_1 extends AppCompatActivity {
 

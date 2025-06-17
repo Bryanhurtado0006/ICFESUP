@@ -12,9 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.icfes_up.MainActivity;
 import com.example.icfes_up.R;
-import com.example.icfes_up.model.DbHelper; // Asegúrate de que la ruta del paquete sea correcta
+import com.example.icfes_up.model.DbHelper;
 import com.example.icfes_up.simulacroANA.CategoriasActivity;
 import com.example.icfes_up.simulacroANA.FragmentCategorias;
 
