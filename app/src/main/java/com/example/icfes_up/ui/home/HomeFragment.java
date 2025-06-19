@@ -1,5 +1,6 @@
 package com.example.icfes_up.ui.home;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.icfes_up.Mundos.Mundos_activity;
 
 import com.example.icfes_up.databinding.FragmentHomeBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class HomeFragment extends Fragment {
 
@@ -26,8 +28,24 @@ public class HomeFragment extends Fragment {
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
+
+
+
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        FloatingActionButton fabSimulacro = requireActivity().findViewById(R.id.Ir_al_simulacro);
+
+        fabSimulacro.setOnClickListener(v -> {
+            new AlertDialog.Builder(requireContext())
+                    .setTitle("Simulacro obligatorio")
+                    .setMessage("Este test es fundamental para evaluar tu nivel actual frente a las pruebas tipo ICFES. Una vez iniciado, no podrás cancelarlo ni salir hasta finalizarlo. ¿Deseas continuar?")
+                    .setCancelable(false)
+                    .setPositiveButton("Comenzar", (dialog, which) -> {
+                        Navigation.findNavController(requireView()).navigate(R.id.action_nav_home_to_fragmentCategorias);
+                    })
+                    .show();
+        });
 
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);

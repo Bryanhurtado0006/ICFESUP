@@ -22,7 +22,7 @@ public class Restablecer_Contrasena_1 extends AppCompatActivity {
         setContentView(binding.getRoot());
         
         binding.btnEnviarSolicitud.setOnClickListener(v -> {
-            Intent intent = new Intent(Restablecer_Contrasena_1.this, Restablecer_Contrasena_2.class);
+            Intent intent = new Intent(Restablecer_Contrasena_1.this, Restablecer);
             startActivity(intent);
         });
     }

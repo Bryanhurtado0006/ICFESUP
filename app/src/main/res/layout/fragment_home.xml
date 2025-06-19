@@ -278,6 +278,17 @@
 
 
         </GridLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/Ir_al_simulacro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:backgroundTint="@color/mi_color_rojo"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/alerttt"  />
+
+
     </RelativeLayout>
 
 
