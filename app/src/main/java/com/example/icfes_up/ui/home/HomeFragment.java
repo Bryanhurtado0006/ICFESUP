@@ -14,6 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.icfes_up.Mundos.Mundos_activity;
+import androidx.appcompat.app.AlertDialog;
+
 
 import com.example.icfes_up.databinding.FragmentHomeBinding;
 
@@ -50,6 +52,21 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
         });
+
+        //direccion al simulacro
+        // Botón flotante Ir_al_simulacro
+        binding.IrAlSimulacro.setOnClickListener(v -> {
+            new androidx.appcompat.app.AlertDialog.Builder(requireContext())
+                    .setTitle("¿Estás listo?")
+                    .setMessage("Este simulacro pondrá a prueba tus conocimientos.")
+                    .setPositiveButton("Sí, comenzar", (dialog, which) -> {
+                        // Redirige al fragmento del simulacro
+                        Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_simulacroFragment);
+                    })
+                    .setNegativeButton("Cancelar", null)
+                    .show();
+        });
+
 
         return root;
 
