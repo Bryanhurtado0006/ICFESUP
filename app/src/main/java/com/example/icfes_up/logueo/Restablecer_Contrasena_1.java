@@ -1,4 +1,4 @@
-package com.example.icfes_up.logueo_registro;
+package com.example.icfes_up.logueo;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ public class Restablecer_Contrasena_1 extends AppCompatActivity {
         setContentView(binding.getRoot());
         
         binding.btnEnviarSolicitud.setOnClickListener(v -> {
-            Intent intent = new Intent(Restablecer_Contrasena_1.this, Restablecer);
+            Intent intent = new Intent(Restablecer_Contrasena_1.this, Restablecer_Contrasena_2.class);
             startActivity(intent);
         });
     }

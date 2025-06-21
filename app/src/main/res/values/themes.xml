@@ -1,7 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- Tema base de la aplicación -->
-    <style name="Theme.ICFESUP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Tema base de la aplicación - CORREGIDO -->
+    <style name="Theme.ICFESUP" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Colores primarios -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_500</item>
@@ -12,14 +11,27 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
 
-
+        <!-- Configuración específica para la Toolbar -->
+        <item name="toolbarStyle">@style/Widget.ICFESUP.Toolbar</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
-
+        <!-- Asegurar que la ActionBar esté habilitada -->
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
     </style>
 
-    <!-- Estilos para overlays opcionales -->
-    <style name="Theme.ICFESUP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-    <style name="Theme.ICFESUP.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!-- Estilo personalizado para Toolbar -->
+    <style name="Widget.ICFESUP.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="navigationIconTint">@color/white</item> <!-- Color del ícono hamburguesa -->
+        <item name="titleTextColor">@color/white</item>
+    </style>
 
+    <!-- Estilos para overlays -->
+    <style name="Theme.ICFESUP.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+    <style name="Theme.ICFESUP.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
 </resources>

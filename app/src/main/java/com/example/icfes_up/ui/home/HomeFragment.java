@@ -7,17 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.navigation.Navigation;
+import android.widget.Toast;
 
-import com.example.icfes_up.Gamificacion_LUIS.Ruleta_LUIS;
-import com.example.icfes_up.R;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
+
+import com.example.icfes_up.Gamificacion_LUIS.Ruleta_LUIS;
 import com.example.icfes_up.Mundos.Mundos_activity;
-import androidx.appcompat.app.AlertDialog;
-
-
+import com.example.icfes_up.R;
 import com.example.icfes_up.databinding.FragmentHomeBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -25,45 +24,49 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
 
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-
-
-
-
+        // Inflar el layout usando ViewBinding
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        FloatingActionButton fabSimulacro = requireActivity().findViewById(R.id.Ir_al_simulacro);
+        // Mostrar toast de carga
+        Toast.makeText(getContext(), "HomeFragment cargado", Toast.LENGTH_SHORT).show();
 
-        fabSimulacro.setOnClickListener(v -> {
-            new AlertDialog.Builder(requireContext())
-                    .setTitle("Simulacro obligatorio")
-                    .setMessage("Este test es fundamental para evaluar tu nivel actual frente a las pruebas tipo ICFES. Una vez iniciado, no podrás cancelarlo ni salir hasta finalizarlo. ¿Deseas continuar?")
-                    .setCancelable(false)
-                    .setPositiveButton("Comenzar", (dialog, which) -> {
-                        Navigation.findNavController(requireView()).navigate(R.id.action_nav_home_to_fragmentCategorias);
-                    })
-                    .show();
-        });
+        // Inicializar ViewModel
+        HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
+        // Configurar el texto observado
         final TextView textView = binding.textHome;
         homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
+        // Configurar botón de simulacro
+        FloatingActionButton fabSimulacro = binding.irAlSimulacro;
+        fabSimulacro.setOnClickListener(v -> {
+            AlertDialog dialog = new AlertDialog.Builder(requireContext())
+                    .setTitle("Simulacro obligatorio")
+                    .setMessage("Este test es esencial para medir tu preparación para las pruebas ICFES. No puede ser cancelado ni omitido.")
+                    .setPositiveButton("Entendido", (dialogInterface, which) -> {
+                        Navigation.findNavController(v).navigate(R.id.action_nav_home_to_fragmentCategorias);
+                    })
+                    .create();
+
+            dialog.setCancelable(false);
+            dialog.setCanceledOnTouchOutside(false);
+            dialog.show();
+        });
+
+        // Configurar click listeners
         binding.OrientacionV.setOnClickListener(v -> {
             Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_bienvenidaFragment);
         });
 
-        //mundos direccion
         binding.ImgMundosgami.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Mundos_activity.class);
             startActivity(intent);
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
         });
-
-        //DINAMICAS Y RETOS
 
         binding.ImgGamificacionsemanal.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), Ruleta_LUIS.class);
@@ -71,27 +74,8 @@ public class HomeFragment extends Fragment {
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
         });
 
-        //direccion al simulacro
-        // Botón flotante Ir_al_simulacro
-        binding.IrAlSimulacro.setOnClickListener(v -> {
-            new androidx.appcompat.app.AlertDialog.Builder(requireContext())
-                    .setTitle("¿Estás listo?")
-                    .setMessage("Este simulacro pondrá a prueba tus conocimientos.")
-                    .setPositiveButton("Sí, comenzar", (dialog, which) -> {
-                        // Redirige al fragmento del simulacro
-                        Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_simulacroFragment);
-                    })
-                    .setNegativeButton("Cancelar", null)
-                    .show();
-        });
-
-
         return root;
-
-
     }
-
-
 
     @Override
     public void onDestroyView() {
