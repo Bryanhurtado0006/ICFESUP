@@ -32,7 +32,7 @@ public class FragmentCategorias extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.itemLectura.setOnClickListener(v ->
-                Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacroLectura1)
+                Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacro_Lectura_1)
         );
 
         binding.btnTitulo.setOnClickListener(v -> {

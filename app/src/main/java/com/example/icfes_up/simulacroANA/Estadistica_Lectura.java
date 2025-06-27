@@ -30,11 +30,11 @@ public class Estadistica_Lectura extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.btnIrASimulacros.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_estadisticaLectura_to_fragmentCategorias);
+            Navigation.findNavController(v).navigate(R.id.action_estadistica_Lectura_to_fragmentCategorias);
         });
 
         binding.btnGoToMain1.setOnClickListener(v ->{
-          Navigation.findNavController(v).navigate(R.id.action_estadisticaLectura_to_nav_home);
+          Navigation.findNavController(v).navigate(R.id.action_estadistica_Lectura_to_nav_home);
         });
     }
 

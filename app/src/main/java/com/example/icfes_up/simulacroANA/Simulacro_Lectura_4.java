@@ -29,7 +29,7 @@ public class Simulacro_Lectura_4 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.VerEstadistica1.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_simulacroLectura4_to_estadisticaLectura);
+            Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_4_to_estadistica_Lectura);
         });
     }
 

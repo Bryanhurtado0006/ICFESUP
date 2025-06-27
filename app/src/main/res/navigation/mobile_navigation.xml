@@ -14,6 +14,9 @@
         <action
             android:id="@+id/action_homeFragment_to_bienvenidaFragment"
             app:destination="@id/bienvenidaFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_welcome_Test_Activity"
+            app:destination="@id/welcome_Test_Activity" />
     </fragment>
 
     <!-- Otros menús -->
@@ -58,4 +61,66 @@
             android:id="@+id/action_finalFragment_to_bienvenidaFragment"
             app:destination="@id/bienvenidaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentCategorias"
+        android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" >
+        <action
+            android:id="@+id/action_fragmentCategorias_to_simulacro_Lectura_1"
+            app:destination="@id/simulacro_Lectura_1" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_1"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
+        android:label="fragment_simulacro_lectura_1"
+        tools:layout="@layout/fragment_simulacro_lectura_1" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_1_to_simulacro_Lectura_2"
+            app:destination="@id/simulacro_Lectura_2" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="fragment_simulacro_lectura_2"
+        tools:layout="@layout/fragment_simulacro_lectura_2" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_2_to_simulacro_Lectura_3"
+            app:destination="@id/simulacro_Lectura_3" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_3"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_3"
+        android:label="fragment_simulacro_lectura_3"
+        tools:layout="@layout/fragment_simulacro_lectura_3" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_3_to_simulacro_Lectura_4"
+            app:destination="@id/simulacro_Lectura_4" />
+    </fragment>
+    <fragment
+        android:id="@+id/simulacro_Lectura_4"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_4"
+        android:label="fragment_simulacro_lectura_4"
+        tools:layout="@layout/fragment_simulacro_lectura_4" >
+        <action
+            android:id="@+id/action_simulacro_Lectura_4_to_estadistica_Lectura"
+            app:destination="@id/estadistica_Lectura" />
+    </fragment>
+    <fragment
+        android:id="@+id/estadistica_Lectura"
+        android:name="com.example.icfes_up.simulacroANA.Estadistica_Lectura"
+        android:label="fragment_estadistica_lectura"
+        tools:layout="@layout/fragment_estadistica_lectura" >
+        <action
+            android:id="@+id/action_estadistica_Lectura_to_fragmentCategorias"
+            app:destination="@id/fragmentCategorias" />
+        <action
+            android:id="@+id/action_estadistica_Lectura_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <activity
+        android:id="@+id/welcome_Test_Activity"
+        android:name="com.example.icfes_up.simulacroANA.Welcome_Test_Activity"
+        android:label="activity_welcome_test"
+        tools:layout="@layout/activity_welcome_test" />
 </navigation>

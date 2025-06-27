@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
+import com.example.icfes_up.databinding.ActivityWelcomeTestBinding;
+import com.example.icfes_up.simulacroANA.CategoriasActivity;
 import com.example.icfes_up.ui.home.SimulacroActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("Iniciar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Intent intent = new Intent(MainActivity.this, SimulacroActivity.class);
+                Intent intent = new Intent(MainActivity.this, ActivityWelcomeTestBinding.class);
                 startActivity(intent);
             }
         });
