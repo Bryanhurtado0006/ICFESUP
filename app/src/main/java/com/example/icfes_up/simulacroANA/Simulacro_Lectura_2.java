@@ -36,7 +36,6 @@ public class Simulacro_Lectura_2 extends Fragment {
 
         binding.btnSiguiente2.setOnClickListener(v -> {
 
-            Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_2_to_simulacro_Lectura_3);
 
             Navigation.findNavController(v).navigate(R.id.action_lectura_Simulacro_2_to_lectura_Simulacro_3);
 

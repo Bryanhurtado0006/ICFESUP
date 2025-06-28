@@ -19,8 +19,7 @@
 
             android:background="@color/colorxx"
 
-            android:background="?attr/colorPrimary"
-            app:navigationIcon="@drawable/menuu"
+
 
             app:popupTheme="@style/Theme.ICFESUP.PopupOverlay" />
 

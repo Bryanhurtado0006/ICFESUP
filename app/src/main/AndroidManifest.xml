@@ -34,7 +34,7 @@
             android:name=".configuracion.Lenny_Verperfil"
             android:exported="false" />
         <activity android:name=".Gamificacion_LUIS.Ruleta_LUIS" />
-        <activity android:name=".simulacroANA.CategoriasActivity" />
+
         <activity
             android:name=".simulacroANA.CategoriasActivity"
             android:exported="false" />

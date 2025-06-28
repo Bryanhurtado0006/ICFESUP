@@ -41,7 +41,7 @@ public class FragmentCategorias extends Fragment {
 
         binding.itemLectura.setOnClickListener(v ->
 
-                Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacro_Lectura_1)
+
 
                 Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacroLectura1)
 

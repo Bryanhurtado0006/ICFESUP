@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
         // Configura la Toolbar primero
         setSupportActionBar(binding.appBarMain.toolbar);
 
-        DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = binding.navView;
+
 
         // Asegúrate que estos IDs coincidan con tu grafo de navegación
 

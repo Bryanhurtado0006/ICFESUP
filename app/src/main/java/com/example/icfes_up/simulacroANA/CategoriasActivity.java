@@ -1,6 +1,5 @@
 package com.example.icfes_up.simulacroANA;
 
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -8,10 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 
 import com.example.icfes_up.R;
 
@@ -38,11 +33,3 @@ public class CategoriasActivity extends AppCompatActivity {
         }
     }
 }
-
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_categorias);
-    }
-}
-
