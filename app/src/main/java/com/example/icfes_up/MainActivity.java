@@ -1,18 +1,28 @@
 package com.example.icfes_up;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Menu;
 
-import com.google.android.material.snackbar.Snackbar;
+import com.example.icfes_up.databinding.ActivityWelcomeTestBinding;
+import com.example.icfes_up.simulacroANA.CategoriasActivity;
+import com.example.icfes_up.simulacroANA.Welcome_Test_Activity;
+import com.example.icfes_up.ui.home.SimulacroActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
 import androidx.core.view.GravityCompat;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
 
 
 import com.example.icfes_up.databinding.ActivityMainBinding;
@@ -26,8 +36,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // Inflamos el layout con ViewBinding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
+        // Toolbar
+        setSupportActionBar(binding.appBarMain.toolbar);
+
+        // Configuración del botón flotante
+        binding.appBarMain.fab.setOnClickListener(view -> mostrarAlertaSimulacro());
+
+        // Configuración del DrawerLayout y Navigation
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
 
         // Configura la Toolbar primero
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -36,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
 
         // Asegúrate que estos IDs coincidan con tu grafo de navegación
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home,
                 R.id.nav_library,
@@ -60,9 +83,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void mostrarAlertaSimulacro() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Simulacro obligatorio");
+        builder.setMessage("Debes completar el simulacro antes de continuar.");
+        builder.setCancelable(false); // No permite cerrar tocando fuera
+
+        builder.setPositiveButton("Iniciar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(MainActivity.this, Welcome_Test_Activity.class);
+                startActivity(intent);
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }

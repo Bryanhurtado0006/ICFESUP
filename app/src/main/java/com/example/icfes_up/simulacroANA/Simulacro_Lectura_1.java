@@ -4,13 +4,20 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+
+
+import com.example.icfes_up.R;
+import com.example.icfes_up.databinding.FragmentSimulacroLectura1Binding;
+
 import com.example.icfes_up.databinding.FragmentSimulacroLectura1Binding;
 
 import com.example.icfes_up.R;
+
 
 public class Simulacro_Lectura_1 extends Fragment {
     private FragmentSimulacroLectura1Binding binding;
@@ -28,7 +35,11 @@ public class Simulacro_Lectura_1 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.btnSiguiente1.setOnClickListener(v -> {
+
+            Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_1_to_simulacro_Lectura_2);
+
             Navigation.findNavController(v).navigate(R.id.action_simulacroLectura1_to_lectura_Simulacro_2);
+
         });
     }
 
