@@ -15,8 +15,13 @@
             android:id="@+id/action_homeFragment_to_bienvenidaFragment"
             app:destination="@id/bienvenidaFragment" />
         <action
+
             android:id="@+id/action_nav_home_to_welcome_Test_Activity"
             app:destination="@id/welcome_Test_Activity" />
+
+            android:id="@+id/action_nav_home_to_fragmentCategorias"
+            app:destination="@id/fragmentCategorias" />
+
     </fragment>
 
     <!-- Otros menús -->
@@ -61,6 +66,7 @@
             android:id="@+id/action_finalFragment_to_bienvenidaFragment"
             app:destination="@id/bienvenidaFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/fragmentCategorias"
         android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
@@ -123,4 +129,78 @@
         android:name="com.example.icfes_up.simulacroANA.Welcome_Test_Activity"
         android:label="activity_welcome_test"
         tools:layout="@layout/activity_welcome_test" />
+
+    <activity
+        android:id="@+id/inicio_Sesion"
+        android:name="com.example.icfes_up.logueo.Inicio_Sesion"
+        android:label="Inicio_Sesion" />
+    <activity
+        android:id="@+id/inicio_Sesion_Usuarios"
+        android:name="com.example.icfes_up.logueo.Inicio_Sesion_Usuarios"
+        android:label="Inicio_Sesion_Usuarios" />
+
+    //simulacros
+
+    <fragment
+        android:id="@+id/fragmentCategorias"
+        android:name="com.example.icfes_up.simulacroANA.FragmentCategorias"
+        android:label="Categorías"
+        tools:layout="@layout/fragment_categorias">
+        <action
+            android:id="@+id/action_fragmentCategorias_to_simulacroLectura1"
+            app:destination="@id/simulacroLectura1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/simulacroLectura1"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_1"
+        android:label="Simulacro Lectura 1"
+        tools:layout="@layout/fragment_simulacro_lectura_1">
+        <action
+            android:id="@+id/action_simulacroLectura1_to_lectura_Simulacro_2"
+            app:destination="@id/lectura_Simulacro_2" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_2"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_2"
+        android:label="Simulacro Lectura 2"
+        tools:layout="@layout/fragment_simulacro_lectura_2">
+        <action
+            android:id="@+id/action_lectura_Simulacro_2_to_lectura_Simulacro_3"
+            app:destination="@id/lectura_Simulacro_3" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_3"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_3"
+        android:label="Simulacro Lectura 3"
+        tools:layout="@layout/fragment_simulacro_lectura_3">
+        <action
+            android:id="@+id/action_lectura_Simulacro_3_to_lectura_Simulacro_4"
+            app:destination="@id/lectura_Simulacro_4" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/lectura_Simulacro_4"
+        android:name="com.example.icfes_up.simulacroANA.Simulacro_Lectura_4"
+        android:label="Simulacro Lectura 4"
+        tools:layout="@layout/fragment_simulacro_lectura_4">
+        <action android:id="@+id/action_simulacroLectura4_to_estadisticaLectura"
+            app:destination="@id/estadisticaLectura" />
+    </fragment>
+
+    <fragment android:id="@+id/estadisticaLectura"
+        android:name="com.example.icfes_up.simulacroANA.Estadistica_Lectura"
+        android:label="Estadística Lectura"
+        tools:layout="@layout/fragment_estadistica_lectura">
+        <action android:id="@+id/action_estadisticaLectura_to_fragmentCategorias"
+            app:destination="@id/fragmentCategorias" />
+        <action
+            android:id="@+id/action_estadisticaLectura_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+
 </navigation>
+

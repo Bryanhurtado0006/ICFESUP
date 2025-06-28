@@ -36,6 +36,9 @@
         <activity android:name=".Gamificacion_LUIS.Ruleta_LUIS" />
         <activity android:name=".simulacroANA.CategoriasActivity" />
         <activity
+            android:name=".simulacroANA.CategoriasActivity"
+            android:exported="false" />
+        <activity
             android:name=".logueo.Sobre_Nosotros"
             android:exported="false" />
         <activity

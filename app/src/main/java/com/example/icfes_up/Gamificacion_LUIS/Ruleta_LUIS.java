@@ -1,136 +1,118 @@
 package com.example.icfes_up.Gamificacion_LUIS;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.icfes_up.R;
 
 public class Ruleta_LUIS extends AppCompatActivity {
 
     private Ruleta_View_Luis ruletaView;
-    private TextView preguntaTextView;
-    private Button respuesta1, respuesta2, respuesta3;
-
-    // Lista de preguntas y respuestas por materia
-    private String[] preguntas = {
-            "¿Qué es la lectura crítica?",
-            "¿Cuál es la fórmula química para el agua?",
-            "¿Qué año comenzó la Primera Guerra Mundial?",
-            "¿Qué significa 'Hello' en español?",
-            "¿Cuál es la raíz cuadrada de 81?",
-            "¿Cuál es el continente donde se encuentra Egipto?"
-    };
-
-    private String[][] respuestas = {
-            {"Análisis de textos", "Leer rápido", "Escuchar"},
-            {"H2O", "CO2", "O2"},
-            {"1914", "1918", "1939"},
-            {"Hola", "Adiós", "Gracias"},
-            {"9", "8", "10"},
-            {"Asia", "Europa", "África"}
-    };
-
-    private int[] respuestasCorrectas = {0, 0, 0, 0, 0, 0}; // Índices de respuestas correctas para cada pregunta
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ruleta_luis);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        // Inicialización de las vistas
         ruletaView = findViewById(R.id.ruletaView);
         Button btnGirar = findViewById(R.id.btnGirar);
-        preguntaTextView = findViewById(R.id.pregunta);
-        respuesta1 = findViewById(R.id.respuesta1);
-        respuesta2 = findViewById(R.id.respuesta2);
-        respuesta3 = findViewById(R.id.respuesta3);
 
         btnGirar.setOnClickListener(v -> {
             ruletaView.girarRuleta(() -> {
                 String categoria = ruletaView.getCategoriaSeleccionada();
                 Toast.makeText(this, "¡Categoría seleccionada: " + categoria + "!", Toast.LENGTH_LONG).show();
-
-                // Obtener el índice de la categoría seleccionada
-                int categoriaIndex = getCategoriaIndex(categoria);
-
-                // Mostrar la pregunta y respuestas correspondientes
-                if (categoriaIndex != -1) {
-                    mostrarPregunta(categoriaIndex);
-                } else {
-                    Toast.makeText(this, "Categoría no encontrada.", Toast.LENGTH_SHORT).show();
-                }
+                mostrarPregunta(categoria); // Llamamos a la función para mostrar la pregunta
             });
         });
-
-        // Configuración de botones de respuestas
-        respuesta1.setOnClickListener(v -> verificarRespuesta(0));
-        respuesta2.setOnClickListener(v -> verificarRespuesta(1));
-        respuesta3.setOnClickListener(v -> verificarRespuesta(2));
     }
 
-    private void mostrarPregunta(int categoriaIndex) {
-        // Mostrar la pregunta y las respuestas
-        preguntaTextView.setText(preguntas[categoriaIndex]);
-        respuesta1.setText(respuestas[categoriaIndex][0]);
-        respuesta2.setText(respuestas[categoriaIndex][1]);
-        respuesta3.setText(respuestas[categoriaIndex][2]);
+    // Mostrar una pregunta dependiendo de la categoría seleccionada
+    private void mostrarPregunta(String categoria) {
+        String pregunta = "";
+        final String[] opciones = new String[4];
+        final String[] respuestaCorrecta = new String[1];
 
-        // Hacer visibles los elementos
-        preguntaTextView.setVisibility(View.VISIBLE);
-        respuesta1.setVisibility(View.VISIBLE);
-        respuesta2.setVisibility(View.VISIBLE);
-        respuesta3.setVisibility(View.VISIBLE);
-    }
-
-    private void verificarRespuesta(int respuestaSeleccionada) {
-        // Verificar si la respuesta seleccionada es correcta
-        int categoriaIndex = getCategoriaIndex(ruletaView.getCategoriaSeleccionada());
-        if (categoriaIndex != -1 && respuestaSeleccionada == respuestasCorrectas[categoriaIndex]) {
-            Toast.makeText(this, "¡Respuesta correcta!", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Respuesta incorrecta. Intenta de nuevo.", Toast.LENGTH_SHORT).show();
-        }
-
-        // Ocultar las preguntas y respuestas después de responder
-        preguntaTextView.setVisibility(View.GONE);
-        respuesta1.setVisibility(View.GONE);
-        respuesta2.setVisibility(View.GONE);
-        respuesta3.setVisibility(View.GONE);
-    }
-
-    private int getCategoriaIndex(String categoria) {
-        // Mapear la categoría seleccionada al índice
+        // Definir preguntas y respuestas según la categoría
         switch (categoria) {
             case "Lectura Crítica":
-                return 0;
+                pregunta = "¿Cuál es el propósito principal de un texto narrativo?";
+                opciones[0] = "Contar una historia";
+                opciones[1] = "Explicar un concepto científico";
+                opciones[2] = "Informar sobre un evento";
+                opciones[3] = "Describir un proceso";
+                respuestaCorrecta[0] = "Contar una historia"; // Respuesta correcta
+                break;
             case "Química":
-                return 1;
+                pregunta = "¿Qué es el pH de una solución?";
+                opciones[0] = "La concentración de protones en una solución";
+                opciones[1] = "La cantidad de oxígeno en una solución";
+                opciones[2] = "El nivel de acidez o alcalinidad";
+                opciones[3] = "La concentración de iones";
+                respuestaCorrecta[0] = "El nivel de acidez o alcalinidad"; // Respuesta correcta
+                break;
             case "Sociales":
-                return 2;
+                pregunta = "¿Qué factor tuvo mayor influencia en la Revolución Francesa?";
+                opciones[0] = "La lucha de clases sociales";
+                opciones[1] = "La intervención de Napoleón";
+                opciones[2] = "La crisis financiera del reino";
+                opciones[3] = "La independencia de las colonias americanas";
+                respuestaCorrecta[0] = "La crisis financiera del reino"; // Respuesta correcta
+                break;
             case "Inglés":
-                return 3;
+                pregunta = "What is the past tense of 'go'?";
+                opciones[0] = "Went";
+                opciones[1] = "Gone";
+                opciones[2] = "Going";
+                opciones[3] = "Goed";
+                respuestaCorrecta[0] = "Went"; // Respuesta correcta
+                break;
             case "Matemáticas":
-                return 4;
+                pregunta = "¿Cuál es el área de un círculo con radio 5?";
+                opciones[0] = "25π";
+                opciones[1] = "10π";
+                opciones[2] = "5π";
+                opciones[3] = "15π";
+                respuestaCorrecta[0] = "25π"; // Respuesta correcta
+                break;
             case "Aleatorio":
-                return 5;
-            default:
-                return -1;  // Retorna -1 si la categoría no es válida
+                pregunta = "¿Cuál es el planeta conocido como el planeta rojo?";
+                opciones[0] = "Marte";
+                opciones[1] = "Venus";
+                opciones[2] = "Júpiter";
+                opciones[3] = "Saturno";
+                respuestaCorrecta[0] = "Marte"; // Respuesta correcta
+                break;
+        }
+
+        // Crear un AlertDialog para mostrar las opciones como botones
+        if (pregunta != null && opciones != null && respuestaCorrecta != null) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Pregunta: " + categoria)
+                    .setMessage(pregunta)
+                    .setCancelable(false);
+
+            // Crear un conjunto de botones con las opciones de respuesta
+            builder.setPositiveButton(opciones[0], (dialog, which) -> verificarRespuesta(opciones[0], respuestaCorrecta[0]));
+            builder.setNegativeButton(opciones[1], (dialog, which) -> verificarRespuesta(opciones[1], respuestaCorrecta[0]));
+            builder.setNeutralButton(opciones[2], (dialog, which) -> verificarRespuesta(opciones[2], respuestaCorrecta[0]));
+            builder.setOnCancelListener(dialog -> verificarRespuesta(opciones[3], respuestaCorrecta[0])); // Acción por defecto
+
+            builder.show();
+        }
+    }
+
+    // Método para verificar si la respuesta es correcta o incorrecta
+    private void verificarRespuesta(String respuestaSeleccionada, String respuestaCorrecta) {
+        if (respuestaSeleccionada.equals(respuestaCorrecta)) {
+            // Si la respuesta es correcta
+            Toast.makeText(this, "¡Correcto!", Toast.LENGTH_SHORT).show();
+        } else {
+            // Si la respuesta es incorrecta
+            Toast.makeText(this, "Respuesta incorrecta. Intenta de nuevo.", Toast.LENGTH_SHORT).show();
         }
     }
 }

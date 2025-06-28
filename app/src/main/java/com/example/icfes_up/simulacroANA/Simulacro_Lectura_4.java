@@ -13,6 +13,10 @@ import androidx.navigation.Navigation;
 import com.example.icfes_up.R;
 import com.example.icfes_up.databinding.FragmentSimulacroLectura4Binding;
 
+import com.example.icfes_up.databinding.FragmentSimulacroLectura4Binding;
+import com.example.icfes_up.R;
+
+
 public class Simulacro_Lectura_4 extends Fragment {
     private FragmentSimulacroLectura4Binding binding;
 
@@ -29,7 +33,11 @@ public class Simulacro_Lectura_4 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.VerEstadistica1.setOnClickListener(v -> {
+
             Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_4_to_estadistica_Lectura);
+
+            Navigation.findNavController(v).navigate(R.id.action_simulacroLectura4_to_estadisticaLectura);
+
         });
     }
 

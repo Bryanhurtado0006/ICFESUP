@@ -12,13 +12,18 @@ import com.example.icfes_up.ui.home.SimulacroActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import androidx.core.view.GravityCompat;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
 
 import com.example.icfes_up.databinding.ActivityMainBinding;
 
@@ -35,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         // Toolbar
         setSupportActionBar(binding.appBarMain.toolbar);
 
@@ -44,15 +50,38 @@ public class MainActivity extends AppCompatActivity {
         // Configuración del DrawerLayout y Navigation
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
+        // Configura la Toolbar primero
+        setSupportActionBar(binding.appBarMain.toolbar);
+
+        DrawerLayout drawer = binding.drawerLayout;
+        NavigationView navigationView = binding.navView;
+
+        // Asegúrate que estos IDs coincidan con tu grafo de navegación
+
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_library, R.id.nav_configuracion)
+                R.id.nav_home,
+                R.id.nav_library,
+                R.id.nav_configuracion)
                 .setOpenableLayout(drawer)
                 .build();
 
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+
+        // Configuración crítica para el menú hamburguesa
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        // Verificación manual (para debug)
+        binding.appBarMain.toolbar.setNavigationOnClickListener(v -> {
+            if(drawer.isDrawerOpen(GravityCompat.START)) {
+                drawer.closeDrawer(GravityCompat.START);
+            } else {
+                drawer.openDrawer(GravityCompat.START);
+            }
+        });
     }
+
 
     private void mostrarAlertaSimulacro() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -73,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

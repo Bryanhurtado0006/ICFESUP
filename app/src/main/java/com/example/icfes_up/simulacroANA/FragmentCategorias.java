@@ -6,13 +6,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+
 import com.example.icfes_up.R;
 import com.example.icfes_up.databinding.FragmentCategoriasBinding;
+
+import com.example.icfes_up.databinding.FragmentCategoriasBinding;
+
+import com.example.icfes_up.R;
+
 import com.example.icfes_up.ui.home.HomeFragment;
 
 public class FragmentCategorias extends Fragment {
@@ -32,7 +40,11 @@ public class FragmentCategorias extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.itemLectura.setOnClickListener(v ->
+
                 Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacro_Lectura_1)
+
+                Navigation.findNavController(v).navigate(R.id.action_fragmentCategorias_to_simulacroLectura1)
+
         );
 
         binding.btnTitulo.setOnClickListener(v -> {

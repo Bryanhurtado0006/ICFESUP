@@ -1,5 +1,6 @@
 package com.example.icfes_up.simulacroANA;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -8,10 +9,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.os.Bundle;
+import androidx.appcompat.app.AppCompatActivity;
+
+
 import com.example.icfes_up.R;
 
 public class CategoriasActivity extends AppCompatActivity {
     @Override
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
@@ -30,6 +36,13 @@ public class CategoriasActivity extends AppCompatActivity {
                 navController.navigate(R.id.fragmentCategorias);
             }
         }
+    }
+}
+
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_categorias);
     }
 }
 

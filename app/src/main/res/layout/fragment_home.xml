@@ -234,6 +234,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+
             <!-- Fila 2 - Columna 0 -->
             <androidx.cardview.widget.CardView
                 android:layout_width="0dp"
@@ -275,10 +276,23 @@
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/irAlSimulacro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:backgroundTint="@color/mi_color_rojo"
+                android:layout_marginEnd="72dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/alerttt" />
 
 
         </GridLayout>
+
+
+
     </RelativeLayout>
+
 
 
 
