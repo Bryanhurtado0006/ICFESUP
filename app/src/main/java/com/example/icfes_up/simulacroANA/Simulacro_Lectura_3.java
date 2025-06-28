@@ -29,7 +29,8 @@ public class Simulacro_Lectura_3 extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         binding.btnSiguiente3.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_4_to_estadistica_Lectura);
+            Navigation.findNavController(v).navigate(R.id.action_simulacro_Lectura_3_to_simulacro_Lectura_4);
+
         });
     }
 
