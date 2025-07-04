@@ -5,11 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 
-import com.example.icfes_up.databinding.ActivityWelcomeTestBinding;
-import com.example.icfes_up.simulacroANA.CategoriasActivity;
 import com.example.icfes_up.simulacroANA.Welcome_Test_Activity;
-import com.example.icfes_up.ui.home.SimulacroActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.app.AlertDialog;
