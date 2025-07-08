@@ -51,6 +51,8 @@ public class HomeFragment extends Fragment {
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
         });
 
+
+
         return root;
 
 
