@@ -1,5 +1,6 @@
 package com.example.icfes_up.Mundos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,13 +37,18 @@ public class ListaMundosFragment extends Fragment {
         recyclerView.addItemDecoration(new SpacingItemDecoration(dpToPx(16)));
 
         List<Mundo> listaMundos = new ArrayList<>();
-        listaMundos.add(new Mundo("Mundo de Matemáticas", R.drawable.mundouno));
-        listaMundos.add(new Mundo("Mundo de Inglés", R.drawable.mundodos));
-        listaMundos.add(new Mundo("Mundo de Español", R.drawable.mundotres));
-        listaMundos.add(new Mundo("Mundo de Ciencias", R.drawable.mundocuatro));
-        listaMundos.add(new Mundo("Mundo de Historia", R.drawable.mundocinco));
+        listaMundos.add(new Mundo("Campo de batalla Matematico", R.drawable.mundouno));
+        listaMundos.add(new Mundo("English Arena", R.drawable.mundodos));
+        listaMundos.add(new Mundo("Biblioteca Encantada", R.drawable.mundotres));
+        listaMundos.add(new Mundo("Laboratorio Galactico", R.drawable.mundocuatro));
+        listaMundos.add(new Mundo("Republica de las Decisiones", R.drawable.mundocinco));
 
-        adapter = new MundosAdapter(listaMundos);
+        adapter = new MundosAdapter(listaMundos, mundoSeleccionado -> {
+            // Puedes abrir aquí MundoDetalleActivity o navegar a otro fragmento con los niveles
+            Intent intent = new Intent(requireContext(), MundoDetalleActivity.class);
+            intent.putExtra("nombre_mundo", mundoSeleccionado.getNombre());
+            startActivity(intent);
+        });
         recyclerView.setAdapter(adapter);
 
         return view;

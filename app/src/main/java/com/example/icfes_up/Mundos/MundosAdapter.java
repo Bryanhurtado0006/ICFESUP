@@ -17,9 +17,15 @@ import java.util.List;
 public class MundosAdapter extends RecyclerView.Adapter<MundosAdapter.MundoViewHolder> {
 
     private List<Mundo> mundos;
+    private OnMundoClickListener listener;
 
-    public MundosAdapter(List<Mundo> mundos) {
+    public interface OnMundoClickListener {
+        void onMundoClick(Mundo mundo);
+    }
+
+    public MundosAdapter(List<Mundo> mundos, OnMundoClickListener listener) {
         this.mundos = mundos;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,6 +41,13 @@ public class MundosAdapter extends RecyclerView.Adapter<MundosAdapter.MundoViewH
         Mundo mundo = mundos.get(position);
         holder.txtNombreMundo1.setText(mundo.getNombre());
         holder.imgMundo1.setImageResource(mundo.getImagen());
+
+        // Acción al hacer clic
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onMundoClick(mundo);
+            }
+        });
     }
 
     @Override
@@ -53,4 +66,5 @@ public class MundosAdapter extends RecyclerView.Adapter<MundosAdapter.MundoViewH
         }
     }
 }
+
 
