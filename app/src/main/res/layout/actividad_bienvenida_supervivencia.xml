@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2196F3"
+    android:padding="24dp">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@drawable/pantalla4"
+        android:contentDescription="Icono modo supervivencia"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modo Supervivencia"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aquí pondrás a prueba tu nivel académico con un examen cronometrado estilo ICFES. ¡Prepárate!"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnIniciarExamen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comenzar examen" />
+</LinearLayout>

@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.icfes_up.Mundos.Mundos_activity;
 
 import com.example.icfes_up.databinding.FragmentHomeBinding;
+import com.example.icfes_up.mod_supervivencia.BienvenidaSupervivenciaActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -50,6 +51,12 @@ public class HomeFragment extends Fragment {
             startActivity(intent);
             requireActivity().overridePendingTransition(R.anim.slide_in_right_testv, R.anim.slide_out_left_testv);
         });
+
+        binding.txtModoSupervivencia.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), BienvenidaSupervivenciaActivity.class);
+            startActivity(intent);
+        });
+
 
 
 

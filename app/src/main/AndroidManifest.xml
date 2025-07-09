@@ -57,6 +57,11 @@
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.ICFESUP" />
+
+        <activity android:name=".mod_supervivencia.SupervivenciaActivity" />
+
+        <activity android:name=".mod_supervivencia.BienvenidaSupervivenciaActivity" />
+
     </application>
 
 </manifest>
