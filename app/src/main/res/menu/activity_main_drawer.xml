@@ -14,7 +14,7 @@
             android:title="@string/Menu_bibioteca" />
         <item
             android:id="@+id/nav_configuracion"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/setting"
             android:title="@string/menu_configuracion" />
 
 

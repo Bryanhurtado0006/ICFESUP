@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_nav_home_to_welcome_Test_Activity"
             app:destination="@id/welcome_Test_Activity" />
+        <action
+            android:id="@+id/action_nav_home_to_miProgresoFragment"
+            app:destination="@id/miProgresoFragment" />
     </fragment>
 
     <!-- Otros menús -->
@@ -28,9 +31,24 @@
 
     <fragment
         android:id="@+id/nav_configuracion"
-        android:name="com.example.icfes_up.ui.configuracionn.GalleryFragment"
+        android:name="com.example.icfes_up.ui.configuracionn.PerfilUsuarioFragment"
         android:label="@string/menu_configuracion"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_perfil_usuario">
+
+        <action
+            android:id="@+id/action_nav_configuracion_to_editarPerfilFragment"
+            app:destination="@id/editarPerfilFragment" />
+
+        <fragment
+            android:id="@+id/editarPerfilFragment"
+            android:name="com.example.icfes_up.ui.configuracionn.EditarPerfilFragment"
+            android:label="Editar Perfil"
+            tools:layout="@layout/fragment_editar_perfil" />
+
+    </fragment>
+
+
+
 
 
 
@@ -123,4 +141,12 @@
         android:name="com.example.icfes_up.simulacroANA.Welcome_Test_Activity"
         android:label="activity_welcome_test"
         tools:layout="@layout/activity_welcome_test" />
+    <fragment
+        android:id="@+id/editarPerfilFragment"
+        android:name="com.example.icfes_up.ui.configuracionn.EditarPerfilFragment"
+        android:label="EditarPerfilFragment" />
+    <fragment
+        android:id="@+id/miProgresoFragment"
+        android:name="com.example.icfes_up.progreso.MiProgresoFragment"
+        android:label="MiProgresoFragment" />
 </navigation>

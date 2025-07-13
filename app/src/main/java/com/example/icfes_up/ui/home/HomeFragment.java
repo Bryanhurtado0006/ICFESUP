@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.icfes_up.Gamificacion_LUIS.Ruleta_LUIS;
@@ -56,6 +58,13 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getContext(), BienvenidaSupervivenciaActivity.class);
             startActivity(intent);
         });
+
+        binding.cardMiProgreso.setOnClickListener(v -> {
+            NavController navController = Navigation.findNavController(v);
+            navController.navigate(R.id.miProgresoFragment);
+        });
+
+
 
 
 

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tituloProgreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu Progreso Académico"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginBottom="24dp"
+            android:gravity="center_horizontal"/>
+
+        <!-- COMPONENTE REUTILIZABLE PARA CADA ÁREA -->
+        <!-- Matemáticas -->
+        <include layout="@layout/item_progreso_area"
+            android:id="@+id/area_matematicas"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Lectura Crítica -->
+        <include layout="@layout/item_progreso_area"
+            android:id="@+id/area_lectura"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Sociales -->
+        <include layout="@layout/item_progreso_area"
+            android:id="@+id/area_sociales"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Ciencias Naturales -->
+        <include layout="@layout/item_progreso_area"
+            android:id="@+id/area_ciencias"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Inglés -->
+        <include layout="@layout/item_progreso_area"
+            android:id="@+id/area_ingles"
+            android:layout_marginBottom="12dp" />
+    </LinearLayout>
+</ScrollView>
+
