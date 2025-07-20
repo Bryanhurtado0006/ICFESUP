@@ -6,12 +6,35 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/zavira"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/zavira_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ICFESUP"
         tools:targetApi="31">
+
+        <activity
+            android:name=".logueo.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ICFESUP">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".logueo.Menu_Logueo"
+            android:exported="false" />
+        <activity
+            android:name=".logueo.Restablecer_Contrasena"
+            android:exported="false" />
+        <activity
+            android:name=".logueo.Registro_Administrador"
+            android:exported="false" />
+        <activity
+            android:name=".logueo.Registro_Usuario"
+            android:exported="false" />
         <activity
             android:name=".simulacroANA.Welcome_Test_Activity"
             android:exported="false" />
@@ -38,28 +61,17 @@
         <activity
             android:name=".logueo.Sobre_Nosotros"
             android:exported="false" />
-        <activity
-            android:name=".logueo.Inicio_Sesion_Usuarios"
-            android:exported="false" />
         <activity android:name=".Mundos.Mundos_activity" />
         <activity
             android:name=".logueo.Inicio_Sesion"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.ICFESUP">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.ICFESUP" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.ICFESUP" />
-
         <activity android:name=".mod_supervivencia.SupervivenciaActivity" />
-
         <activity android:name=".mod_supervivencia.BienvenidaSupervivenciaActivity" />
         <activity android:name=".Mundos.MundoDetalleActivity" />
         <activity android:name=".Mundos.matematicas.facil.FacilMatematicasActivity" />
@@ -67,10 +79,6 @@
         <activity android:name=".Mundos.sociales.facil.FacilSocialesActivity" />
         <activity android:name=".Mundos.ciencias_naturales.facil.FacilCienciasActivity" />
         <activity android:name=".Mundos.ingles.facil.FacilInglesActivity" />
-
-
-
-
 
     </application>
 
